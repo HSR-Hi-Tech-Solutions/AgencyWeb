@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechSolutions - IT Services</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0B2447;
+            --secondary-color: #19376D;
+            --accent-color: #146C94;
+            --light-bg: #F8F9FA;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--primary-color) !important;
+            margin: 0 1rem;
+        }
+
+        .btn-custom {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .about-section, .services-section {
+            background: white;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 100%;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-card img {
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .service-card h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .service-card:hover h3::after {
+            width: 100px;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .service-features li {
+            margin-bottom: 0.8rem;
+            color: #555;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-features li i {
+            color: var(--accent-color);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        .btn-custom {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            border: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-custom:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .rounded-image {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .stats-box {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+        }
+
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .img-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .contact-section .form-control {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contact-section .form-control:focus {
+            border-color: var(--accent-color);
+            box-shadow: none;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .modal-content {
+            border: none;
+            border-radius: 16px;
+        }
+
+        .modal-header {
+            padding: 1.5rem 1.5rem 0.5rem;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+        }
+
+        .modal-footer {
+            padding: 1rem 1.5rem 1.5rem;
+        }
+
+        .form-control, .form-select {
+            padding: 0.75rem 1.2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(0,0,0,0.1);
+            font-size: 0.95rem;
+            background-color: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus, .form-select:focus {
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-color: var(--accent-color);
+        }
+
+        .form-label {
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            color: #495057;
+        }
+
+        .btn-light {
+            background-color: #f8f9fa;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .btn-light:hover {
+            background-color: #e9ecef;
+        }
+
+        @media (max-width: 576px) {
+            .modal-dialog {
+                margin: 1rem;
+            }
+        }
+
+        .modal-content {
+            border: none;
+            border-radius: 16px;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-color);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-icon i {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .process-icon .badge {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .bg-primary-subtle {
+            background-color: rgba(20, 108, 148, 0.1);
+        }
+
+        .process-timeline .process-item:not(:last-child)::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 30px;
+            height: calc(100% + 1rem);
+            border-left: 2px dashed rgba(20, 108, 148, 0.2);
+        }
+
+        .process-timeline {
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .modal-dialog-centered.modal-lg {
+            max-width: 800px;
+        }
+
+        @media (max-width: 768px) {
+            .modal-dialog {
+                margin: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">TechSolutions</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="Home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="FAQ.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+                </ul>
+                <button class="btn btn-custom me-3" data-bs-toggle="modal" data-bs-target="#quoteModal">Get Free Quote</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section" id="home" style="background-image: url('https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: center;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 style="color: white;">Transform Your Business With Technology</h1>
+                        <p style="color: white;">We deliver cutting-edge IT solutions that help businesses thrive in the digital age. Our expertise spans web development, cloud solutions, and digital transformation.</p>
+                        <button class="btn btn-custom me-3" data-bs-toggle="modal" data-bs-target="#quoteModal">Get Free Quote</button>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="img-container">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" alt="Our Team" class="img-fluid rounded-image">
+                    </div>
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <h2 class="section-title">About Our Company</h2>
+                    <p class="section-subtitle">Leading IT Solutions Provider Since 2010</p>
+                    <p>With over a decade of experience, we've helped hundreds of businesses achieve their digital transformation goals. Our team of experts combines technical excellence with business acumen to deliver solutions that drive real results.</p>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="stats-box">
+                                <div class="stats-number">50+</div>
+                                <div>Projects Completed</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stats-box">
+                                <div class="stats-number">98%</div>
+                                <div>Client Satisfaction</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section" id="services">
+        <div class="container">
+            <h2 class="section-title text-center">Our Services</h2>
+            <p class="section-subtitle text-center">Comprehensive IT Solutions for Your Business</p>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="service-card">
+                        <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Web Development" class="img-fluid">
+                        <h3>Web Development</h3>
+                        <p>Custom websites and web applications built with cutting-edge technologies to deliver exceptional user experiences.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Responsive Design</li>
+                            <li><i class="fas fa-check-circle"></i> E-commerce Solutions</li>
+                            <li><i class="fas fa-check-circle"></i> CMS Integration</li>
+                        </ul>
+                        <button class="btn btn-custom mt-3" data-bs-toggle="modal" data-bs-target="#webDevModal">
+                            Learn More <i class="fas fa-arrow-right ms-2"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-card">
+                        <img src="https://images.pexels.com/photos/699122/pexels-photo-699122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Mobile Development" class="img-fluid">
+                        <h3>Mobile Development</h3>
+                        <p>Native and cross-platform mobile applications that help you reach your customers on any device.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> iOS & Android Apps</li>
+                            <li><i class="fas fa-check-circle"></i> Cross-platform Solutions</li>
+                            <li><i class="fas fa-check-circle"></i> App Store Optimization</li>
+                        </ul>
+                        <button class="btn btn-custom mt-3" data-bs-toggle="modal" data-bs-target="#mobileDevModal">
+                            Learn More <i class="fas fa-arrow-right ms-2"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa" alt="Cloud Solutions" class="img-fluid">
+                        <h3>Cloud Solutions</h3>
+                        <p>Scalable and secure cloud infrastructure solutions to power your business growth and innovation.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Cloud Migration</li>
+                            <li><i class="fas fa-check-circle"></i> AWS & Azure Services</li>
+                            <li><i class="fas fa-check-circle"></i> 24/7 Monitoring</li>
+                        </ul>
+                        <button class="btn btn-custom mt-3" data-bs-toggle="modal" data-bs-target="#cloudSolutionsModal">
+                            Learn More <i class="fas fa-arrow-right ms-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="FAQ" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 5rem 0;">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge rounded-pill px-3 py-2 mb-2" style="background: var(--accent-color);">FAQ</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Get answers to common questions about our services and solutions</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="row g-4">
+                        <!-- FAQ Item 1 -->
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="contact-info-card">
+                                <div class="icon-box" style="width: 50px; height: 50px;">
+                                    <i class="fas fa-cube" style="color: var(--accent-color); font-size: 24px;"></i>
+                                </div>
+                                <h4 class="mb-3" style="color: var(--primary-color); font-weight: 600;">What services do you offer?</h4>
+                                <p class="text-muted mb-0">Our comprehensive services include:</p>
+                                <ul class="list-unstyled mt-2 text-muted">
+                                    <li class="mb-2"><i class="fas fa-code me-2" style="color: var(--accent-color)"></i>Web Development</li>
+                                    <li class="mb-2"><i class="fas fa-mobile-alt me-2" style="color: var(--accent-color)"></i>Mobile App Development</li>
+                                    <li class="mb-2"><i class="fas fa-cloud me-2" style="color: var(--accent-color)"></i>Cloud Solutions</li>
+                                    <li><i class="fas fa-digital-tachograph me-2" style="color: var(--accent-color)"></i>Digital Transformation</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 2 -->
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="contact-info-card">
+                                <div class="icon-box" style="width: 50px; height: 50px;">
+                                    <i class="fas fa-file-invoice-dollar" style="color: var(--accent-color); font-size: 24px;"></i>
+                                </div>
+                                <h4 class="mb-3" style="color: var(--primary-color); font-weight: 600;">How can I get a quote?</h4>
+                                <p class="text-muted mb-0">Getting a quote is easy:</p>
+                                <ul class="list-unstyled mt-2 text-muted">
+                                    <li class="mb-2"><i class="fas fa-message me-2" style="color: var(--accent-color)"></i>Fill out our contact form</li>
+                                    <li class="mb-2"><i class="fas fa-calendar-check me-2" style="color: var(--accent-color)"></i>Schedule a consultation</li>
+                                    <li class="mb-2"><i class="fas fa-file-contract me-2" style="color: var(--accent-color)"></i>Receive detailed proposal</li>
+                                    <li><i class="fas fa-sliders me-2" style="color: var(--accent-color)"></i>Fine-tune to your needs</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 3 -->
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                            <div class="contact-info-card">
+                                <div class="icon-box" style="width: 50px; height: 50px;">
+                                    <i class="fas fa-building" style="color: var(--accent-color); font-size: 24px;"></i>
+                                </div>
+                                <h4 class="mb-3" style="color: var(--primary-color); font-weight: 600;">What industries do you serve?</h4>
+                                <p class="text-muted mb-0">We serve diverse industries including:</p>
+                                <ul class="list-unstyled mt-2 text-muted">
+                                    <li class="mb-2"><i class="fas fa-hospital me-2" style="color: var(--accent-color)"></i>Healthcare</li>
+                                    <li class="mb-2"><i class="fas fa-landmark me-2" style="color: var(--accent-color)"></i>Finance</li>
+                                    <li class="mb-2"><i class="fas fa-school me-2" style="color: var(--accent-color)"></i>Education</li>
+                                    <li><i class="fas fa-store me-2" style="color: var(--accent-color)"></i>E-commerce</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 4 -->
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                            <div class="contact-info-card">
+                                <div class="icon-box" style="width: 50px; height: 50px;">
+                                    <i class="fas fa-headset" style="color: var(--accent-color); font-size: 24px;"></i>
+                                </div>
+                                <h4 class="mb-3" style="color: var(--primary-color); font-weight: 600;">Do you provide support?</h4>
+                                <p class="text-muted mb-0">Our support includes:</p>
+                                <ul class="list-unstyled mt-2 text-muted">
+                                    <li class="mb-2"><i class="fas fa-headset me-2" style="color: var(--accent-color)"></i>24/7 Technical Support</li>
+                                    <li class="mb-2"><i class="fas fa-arrows-rotate me-2" style="color: var(--accent-color)"></i>Regular Maintenance</li>
+                                    <li class="mb-2"><i class="fas fa-shield me-2" style="color: var(--accent-color)"></i>Security Updates</li>
+                                    <li><i class="fas fa-chart-line me-2" style="color: var(--accent-color)"></i>Performance Monitoring</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Success Stories Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge rounded-pill px-3 py-2 mb-2" style="background: var(--accent-color);">
+                    <i class="fas fa-star me-1"></i> Testimonials
+                </span>
+                <h2 class="section-title">Client Success Stories</h2>
+                <p class="section-subtitle">What our clients say about working with us</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card card h-100 border-0 shadow-sm" 
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="card-body p-4">
+                            <div class="mb-4 testimonial-icon" style="color: var(--accent-color);">
+                                <i class="fas fa-quote-right fa-2x"></i>
+                            </div>
+                            <div class="mb-4">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="mb-4">"TechSolutions transformed our business operations with their innovative cloud solutions. The results exceeded our expectations."</p>
+                            <div class="d-flex align-items-center">
+                                <div class="flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" 
+                                         alt="Sarah Johnson" 
+                                         class="rounded-circle shadow-sm" 
+                                         style="width: 60px; height: 60px; object-fit: cover; border: 3px solid white;">
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-1" style="color: var(--primary-color);">Sarah Johnson</h6>
+                                    <p class="small mb-0 text-muted">
+                                        <i class="fas fa-building me-2"></i>CEO, InnovateX
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card card h-100 border-0 shadow-sm" 
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="card-body p-4">
+                            <div class="mb-4 testimonial-icon" style="color: var(--accent-color);">
+                                <i class="fas fa-quote-right fa-2x"></i>
+                            </div>
+                            <div class="mb-4">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="mb-4">"The team's expertise in mobile development helped us launch our app months ahead of schedule. Truly exceptional service."</p>
+                            <div class="d-flex align-items-center">
+                                <div class="flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e" 
+                                         alt="David Chen" 
+                                         class="rounded-circle shadow-sm" 
+                                         style="width: 60px; height: 60px; object-fit: cover; border: 3px solid white;">
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-1" style="color: var(--primary-color);">David Chen</h6>
+                                    <p class="small mb-0 text-muted">
+                                        <i class="fas fa-laptop-code me-2"></i>CTO, MobileFirst
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-card card h-100 border-0 shadow-sm" 
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="card-body p-4">
+                            <div class="mb-4 testimonial-icon" style="color: var(--accent-color);">
+                                <i class="fas fa-quote-right fa-2x"></i>
+                            </div>
+                            <div class="mb-4">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="mb-4">"Their IT consulting services provided us with valuable insights that helped scale our operations efficiently."</p>
+                            <div class="d-flex align-items-center">
+                                <div class="flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e" 
+                                         alt="Emily Roberts" 
+                                         class="rounded-circle shadow-sm" 
+                                         style="width: 60px; height: 60px; object-fit: cover; border: 3px solid white;">
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-1" style="color: var(--primary-color);">Emily Roberts</h6>
+                                    <p class="small mb-0 text-muted">
+                                        <i class="fas fa-chart-line me-2"></i>COO, TechGrowth
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80'); background-size: cover; background-position: center; padding: 5rem 0; color: white;">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-5">
+                    <h2 class="section-title" style="color: white;">Get In Touch</h2>
+                    <p class="mb-4">Ready to transform your business? Contact us today for a free consultation.</p>
+                    
+                    <div class="contact-info">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-map-marker-alt me-3" style="color: var(--accent-color)"></i>
+                            <p class="mb-0">123 Business Avenue, Tech City, TC 12345</p>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-phone me-3" style="color: var(--accent-color)"></i>
+                            <p class="mb-0">+1 (555) 123-4567</p>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-envelope me-3" style="color: var(--accent-color)"></i>
+                            <p class="mb-0">info@techsolutions.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="contact-form p-4 rounded" style="background: rgba(255, 255, 255, 0.95);">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="email" class="form-control" placeholder="Your Email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="tel" class="form-control" placeholder="Your Phone Number" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Subject">
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-custom w-100">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="background: var(--primary-color); color: white; padding: 4rem 0 0 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4 class="mb-4">TechSolutions</h4>
+                    <p>Empowering businesses through innovative technology solutions and digital transformation.</p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 mb-4">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="home.html">Home</a></li>
+                        <li class="mb-2"><a href="about.html">About</a></li>
+                        <li class="mb-2"><a href="services.html">Services</a></li>
+                        <li class="mb-2"><a href="contact.html">Contact</a></li>
+                        <li class="mb-2"><a href="FAQ.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-4">Our Services</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">Web Development</li>
+                        <li class="mb-2">Mobile Development</li>
+                        <li class="mb-2">Cloud Solutions</li>
+                        <li class="mb-2">IT Consulting</li>
+                        <li class="mb-2">Digital Marketing</li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p>Subscribe to our newsletter for updates and insights.</p>
+                    <form class="mt-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                            <button class="btn btn-custom" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="text-center py-3 mt-4" style="background: rgba(0,0,0,0.2);">
+            <p class="mb-0">© 2024 TechSolutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Add this modal code before the closing body tag -->
+    <div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold" id="quoteModalLabel">Request a Free Quote</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted mb-4">Please fill out the form below and we'll get back to you with a custom quote.</p>
+                    <form id="quoteForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" placeholder="John Doe" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Company Name</label>
+                                    <input type="text" class="form-control" placeholder="Your Company">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" placeholder="john@example.com" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" placeholder="+1 (555) 000-0000">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label">Service Interested In</label>
+                                    <select class="form-select" required>
+                                        <option value="" selected disabled>Select a service</option>
+                                        <option value="web">Web Development</option>
+                                        <option value="mobile">Mobile Development</option>
+                                        <option value="cloud">Cloud Solutions</option>
+                                        <option value="consulting">IT Consulting</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label">Project Details</label>
+                                    <textarea class="form-control" rows="3" placeholder="Tell us about your project requirements..." required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" form="quoteForm" class="btn btn-custom">Submit Request</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Web Development Modal -->
+    <div class="modal fade" id="webDevModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold">
+                        <i class="fas fa-code me-2 text-primary"></i>
+                        Web Development Services
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg" 
+                                 alt="Web Development" 
+                                 class="img-fluid rounded-4 mb-4">
+                            <div class="tech-stack">
+                                <h6 class="fw-bold mb-3">Technologies We Use</h6>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge bg-light text-dark"><i class="fab fa-react text-primary me-1"></i> React</span>
+                                    <span class="badge bg-light text-dark"><i class="fab fa-node-js text-success me-1"></i> Node.js</span>
+                                    <span class="badge bg-light text-dark"><i class="fab fa-angular text-danger me-1"></i> Angular</span>
+                                    <span class="badge bg-light text-dark"><i class="fab fa-vuejs text-success me-1"></i> Vue.js</span>
+                                    <span class="badge bg-light text-dark"><i class="fab fa-php text-primary me-1"></i> PHP</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="fw-bold mb-3">Our Web Solutions</h6>
+                            <div class="features-list">
+                                <div class="feature-item d-flex align-items-center mb-3">
+                                    <div class="feature-icon me-3">
+                                        <i class="fas fa-desktop"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Custom Web Applications</h6>
+                                        <p class="small text-muted mb-0">Tailored solutions for your business needs</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item d-flex align-items-center mb-3">
+                                    <div class="feature-icon me-3">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">E-commerce Platforms</h6>
+                                        <p class="small text-muted mb-0">Secure and scalable online stores</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item d-flex align-items-center mb-3">
+                                    <div class="feature-icon me-3">
+                                        <i class="fas fa-cogs"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">CMS Development</h6>
+                                        <p class="small text-muted mb-0">Easy content management systems</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#quoteModal">
+                        Get Quote <i class="fas fa-paper-plane ms-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Development Modal -->
+    <div class="modal fade" id="mobileDevModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold">
+                        <i class="fas fa-mobile-alt me-2 text-primary"></i>
+                        Mobile Development Services
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="https://images.pexels.com/photos/699122/pexels-photo-699122.jpeg" 
+                                 alt="Mobile Development" 
+                                 class="img-fluid rounded-4 mb-4">
+                            <div class="tech-stack">
+                                <h6 class="fw-bold mb-3">Technologies We Use</h6>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge bg-light text-dark"><i class="fab fa-apple text-dark me-1"></i> iOS</span>
+                                    <span class="badge bg-light text-dark"><i class="fab fa-android text-success me-1"></i> Android</span>
+                                    <span class="badge bg-light text-dark"><i class="fab fa-react text-primary me-1"></i> React Native</span>
+                                    <span class="badge bg-light text-dark"><i class="fab fa-flutter text-info me-1"></i> Flutter</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="fw-bold mb-3">Mobile Solutions</h6>
+                            <div class="features-list">
+                                <div class="feature-item d-flex align-items-center mb-3">
+                                    <div class="feature-icon me-3">
+                                        <i class="fas fa-mobile-screen"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Native Apps</h6>
+                                        <p class="small text-muted mb-0">High-performance iOS and Android apps</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item d-flex align-items-center mb-3">
+                                    <div class="feature-icon me-3">
+                                        <i class="fas fa-sync"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Cross-platform Development</h6>
+                                        <p class="small text-muted mb-0">Build once, run everywhere</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item d-flex align-items-center mb-3">
+                                    <div class="feature-icon me-3">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">App Store Optimization</h6>
+                                        <p class="small text-muted mb-0">Maximize your app's visibility</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#quoteModal">
+                        Get Quote <i class="fas fa-paper-plane ms-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cloud Solutions Modal -->
+    <div class="modal fade" id="cloudSolutionsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold">
+                        <i class="fas fa-cloud me-2 text-primary"></i>
+                        Cloud Solutions
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa" 
+                                 alt="Cloud Solutions" 
+                                 class="img-fluid rounded-4 mb-4">
+                            <div class="tech-stack">
+                                <h6 class="fw-bold mb-3">Cloud Platforms</h6>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge bg-light text-dark"><i class="fab fa-aws text-warning me-1"></i> AWS</span>
+                                    <span class="badge bg-light text-dark"><i class="fab fa-microsoft text-primary me-1"></i> Azure</span>
+                                    <span class="badge bg-light text-dark"><i class="fab fa-google text-success me-1"></i> Google Cloud</span>
+                                    <span class="badge bg-light text-dark"><i class="fab fa-digital-ocean text-primary me-1"></i> DigitalOcean</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="fw-bold mb-3">Cloud Services</h6>
+                            <div class="features-list">
+                                <div class="feature-item d-flex align-items-center mb-3">
+                                    <div class="feature-icon me-3">
+                                        <i class="fas fa-server"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Cloud Infrastructure</h6>
+                                        <p class="small text-muted mb-0">Scalable and secure hosting solutions</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item d-flex align-items-center mb-3">
+                                    <div class="feature-icon me-3">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Security & Monitoring</h6>
+                                        <p class="small text-muted mb-0">24/7 security and performance monitoring</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item d-flex align-items-center mb-3">
+                                    <div class="feature-icon me-3">
+                                        <i class="fas fa-database"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Data Management</h6>
+                                        <p class="small text-muted mb-0">Efficient cloud storage and backup</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#quoteModal">
+                        Get Quote <i class="fas fa-paper-plane ms-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - TechSolutions</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Same styles as other pages -->
+    <style>
+        :root {
+            --primary-color: #0B2447;
+            --secondary-color: #19376D;
+            --accent-color: #146C94;
+            --light-bg: #F8F9FA;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--primary-color) !important;
+            margin: 0 1rem;
+        }
+
+        .btn-custom {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        /* Keep your existing service-specific styles below */
+
+        .service-hero-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+        }
+
+        .service-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-image-wrapper img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .tech-icon {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .tech-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .tech-icon img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <!-- Same Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">TechSolutions</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="Home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="FAQ.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+                </ul>
+                <button class="btn btn-custom me-3" data-bs-toggle="modal" data-bs-target="#quoteModal">Get Free Quote</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Services Hero Section -->
+    <section class="services-hero" style="background: linear-gradient(rgba(11, 36, 71, 0.9), rgba(11, 36, 71, 0.9)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80'); background-size: cover; background-position: center; padding: 8rem 0 4rem; color: white;">
+        <div class="container">
+            <div class="row justify-content-center text-center" data-aos="fade-up">
+                <div class="col-lg-8">
+                    <span class="service-hero-badge">
+                        <i class="fas fa-rocket me-2"></i>Our Services
+                    </span>
+                    <h1 class="mb-4">Comprehensive IT Solutions</h1>
+                    <p class="lead mb-4">Empowering businesses with cutting-edge technology solutions</p>
+                    <a href="#contact" class="btn btn-custom me-3">
+                        <i class="fas fa-paper-plane me-2"></i>Get Started
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add after the Hero Section -->
+    <section class="features-section py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Feature Cards -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card p-4 bg-white rounded-3 shadow-sm h-100" 
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="icon-box mb-4" style="width: 60px; height: 60px; border-radius: 12px; background: rgba(20, 108, 148, 0.1); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-shield-alt" style="color: var(--accent-color); font-size: 24px;"></i>
+                        </div>
+                        <h4>Secure Solutions</h4>
+                        <p class="text-muted mb-0">Enterprise-grade security measures to protect your business data and applications.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card p-4 bg-white rounded-3 shadow-sm h-100"
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="icon-box mb-4" style="width: 60px; height: 60px; border-radius: 12px; background: rgba(20, 108, 148, 0.1); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-clock" style="color: var(--accent-color); font-size: 24px;"></i>
+                        </div>
+                        <h4>24/7 Support</h4>
+                        <p class="text-muted mb-0">Round-the-clock technical support and monitoring for your peace of mind.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card p-4 bg-white rounded-3 shadow-sm h-100"
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="icon-box mb-4" style="width: 60px; height: 60px; border-radius: 12px; background: rgba(20, 108, 148, 0.1); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-rocket" style="color: var(--accent-color); font-size: 24px;"></i>
+                        </div>
+                        <h4>Scalable Growth</h4>
+                        <p class="text-muted mb-0">Solutions that grow with your business, ensuring long-term success.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Service Process Section -->
+    <section class="process-section py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="badge rounded-pill px-3 py-2 mb-2" style="background: var(--accent-color);">
+                    <i class="fas fa-cogs me-1"></i>Our Process
+                </span>
+                <h2 class="section-title">How We Work</h2>
+                <p class="section-subtitle">Our proven methodology for delivering excellence</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="process-card text-center p-4">
+                        <div class="process-icon mb-4 mx-auto" style="width: 80px; height: 80px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                            <i class="fas fa-lightbulb fa-2x" style="color: var(--accent-color);"></i>
+                        </div>
+                        <h4 class="mb-3">1. Discovery</h4>
+                        <p class="text-muted">Understanding your needs and objectives through detailed consultation.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="process-card text-center p-4">
+                        <div class="process-icon mb-4 mx-auto" style="width: 80px; height: 80px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                            <i class="fas fa-pencil-ruler fa-2x" style="color: var(--accent-color);"></i>
+                        </div>
+                        <h4 class="mb-3">2. Planning</h4>
+                        <p class="text-muted">Developing a comprehensive strategy and project roadmap.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="process-card text-center p-4">
+                        <div class="process-icon mb-4 mx-auto" style="width: 80px; height: 80px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                            <i class="fas fa-code fa-2x" style="color: var(--accent-color);"></i>
+                        </div>
+                        <h4 class="mb-3">3. Development</h4>
+                        <p class="text-muted">Implementing solutions using cutting-edge technologies.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="process-card text-center p-4">
+                        <div class="process-icon mb-4 mx-auto" style="width: 80px; height: 80px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                            <i class="fas fa-rocket fa-2x" style="color: var(--accent-color);"></i>
+                        </div>
+                        <h4 class="mb-3">4. Launch</h4>
+                        <p class="text-muted">Deploying and maintaining your solution for optimal performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Service Comparison Table -->
+    <section class="pricing-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="badge rounded-pill px-3 py-2 mb-2" style="background: var(--accent-color);">
+                    <i class="fas fa-tags me-1"></i>Service Plans
+                </span>
+                <h2 class="section-title">Choose Your Plan</h2>
+                <p class="section-subtitle">Flexible solutions for businesses of all sizes</p>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="bg-light">
+                            <th scope="col" style="width: 25%;">Features</th>
+                            <th scope="col" style="width: 25%;" class="text-center">Basic</th>
+                            <th scope="col" style="width: 25%;" class="text-center">Professional</th>
+                            <th scope="col" style="width: 25%;" class="text-center">Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Consultation</td>
+                            <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                            <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                            <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Development Hours</td>
+                            <td class="text-center">20 hours</td>
+                            <td class="text-center">50 hours</td>
+                            <td class="text-center">Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td>Support</td>
+                            <td class="text-center">Email</td>
+                            <td class="text-center">Email & Phone</td>
+                            <td class="text-center">24/7 Priority</td>
+                        </tr>
+                        <tr>
+                            <td>Updates</td>
+                            <td class="text-center">Quarterly</td>
+                            <td class="text-center">Monthly</td>
+                            <td class="text-center">Weekly</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Solutions Section -->
+    <section class="industries-section py-5" style="background: var(--light-bg);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="badge rounded-pill px-3 py-2 mb-2" style="background: var(--accent-color);">
+                    <i class="fas fa-industry me-1"></i>Industries
+                </span>
+                <h2 class="section-title">Industries We Serve</h2>
+                <p class="section-subtitle">Tailored solutions for various sectors</p>
+            </div>
+            <div class="row g-4">
+                <!-- Healthcare Card -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <div class="industry-card p-4 bg-white rounded-3 shadow-sm"
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="icon-box mb-4" style="width: 60px; height: 60px; border-radius: 12px; background: rgba(20, 108, 148, 0.1); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-hospital" style="color: var(--accent-color); font-size: 24px;"></i>
+                        </div>
+                        <h4>Healthcare</h4>
+                        <p class="text-muted">Secure and compliant solutions for healthcare providers.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>HIPAA Compliant</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>Patient Portals</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>EMR Integration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- E-Commerce Card -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="industry-card p-4 bg-white rounded-3 shadow-sm"
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="icon-box mb-4" style="width: 60px; height: 60px; border-radius: 12px; background: rgba(20, 108, 148, 0.1); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-shopping-cart" style="color: var(--accent-color); font-size: 24px;"></i>
+                        </div>
+                        <h4>E-Commerce</h4>
+                        <p class="text-muted">Scalable online retail solutions for modern businesses.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>Payment Integration</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>Inventory Management</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Analytics Dashboard</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Finance Card -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="industry-card p-4 bg-white rounded-3 shadow-sm"
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="icon-box mb-4" style="width: 60px; height: 60px; border-radius: 12px; background: rgba(20, 108, 148, 0.1); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-chart-line" style="color: var(--accent-color); font-size: 24px;"></i>
+                        </div>
+                        <h4>Finance</h4>
+                        <p class="text-muted">Secure financial technology solutions for banking and fintech.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>Secure Transactions</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>Real-time Analytics</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Regulatory Compliance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Education Card -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="industry-card p-4 bg-white rounded-3 shadow-sm"
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="icon-box mb-4" style="width: 60px; height: 60px; border-radius: 12px; background: rgba(20, 108, 148, 0.1); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-graduation-cap" style="color: var(--accent-color); font-size: 24px;"></i>
+                        </div>
+                        <h4>Education</h4>
+                        <p class="text-muted">Innovative solutions for educational institutions.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>Learning Management Systems</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>Student Portals</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Online Courses</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Real Estate Card -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="industry-card p-4 bg-white rounded-3 shadow-sm"
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="icon-box mb-4" style="width: 60px; height: 60px; border-radius: 12px; background: rgba(20, 108, 148, 0.1); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-home" style="color: var(--accent-color); font-size: 24px;"></i>
+                        </div>
+                        <h4>Real Estate</h4>
+                        <p class="text-muted">Solutions for real estate management.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>Property Management</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>Real Estate Portals</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Market Analysis Tools</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Hospitality Card -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700">
+                    <div class="industry-card p-4 bg-white rounded-3 shadow-sm"
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="icon-box mb-4" style="width: 60px; height: 60px; border-radius: 12px; background: rgba(20, 108, 148, 0.1); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-concierge-bell" style="color: var(--accent-color); font-size: 24px;"></i>
+                        </div>
+                        <h4>Hospitality</h4>
+                        <p class="text-muted">Tailored solutions for the hospitality industry.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>Booking Systems</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>Guest Management</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Feedback Systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Services Section -->
+    <section class="py-5">
+        <div class="container">
+            <!-- Web Development -->
+            <div class="row align-items-center mb-5" data-aos="fade-up">
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80" 
+                         alt="Web Development" 
+                         class="img-fluid rounded-3 shadow-lg">
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <div class="icon-box mb-4" style="width: 60px; height: 60px; border-radius: 12px; background: rgba(20, 108, 148, 0.1); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-code" style="color: var(--accent-color); font-size: 28px;"></i>
+                    </div>
+                    <h2 class="section-title">Web Development</h2>
+                    <p class="lead text-muted mb-4">Custom websites and web applications that drive results</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fas fa-check-circle me-2" style="color: var(--accent-color)"></i>
+                            Responsive Design
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fas fa-check-circle me-2" style="color: var(--accent-color)"></i>
+                            E-commerce Solutions
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fas fa-check-circle me-2" style="color: var(--accent-color)"></i>
+                            CMS Development
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+
+            <!-- Mobile Development -->
+            <div class="row align-items-center mb-5 flex-lg-row-reverse" data-aos="fade-up">
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80" 
+                         alt="Mobile Development" 
+                         class="img-fluid rounded-3 shadow-lg">
+                </div>
+                <div class="col-lg-6 pe-lg-5">
+                    <div class="icon-box mb-4" style="width: 60px; height: 60px; border-radius: 12px; background: rgba(20, 108, 148, 0.1); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-mobile-alt" style="color: var(--accent-color); font-size: 28px;"></i>
+                    </div>
+                    <h2 class="section-title">Mobile Development</h2>
+                    <p class="lead text-muted mb-4">Native and cross-platform mobile applications</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fas fa-check-circle me-2" style="color: var(--accent-color)"></i>
+                            iOS Development
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fas fa-check-circle me-2" style="color: var(--accent-color)"></i>
+                            Android Development
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fas fa-check-circle me-2" style="color: var(--accent-color)"></i>
+                            Cross-platform Solutions
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+
+            <!-- Cloud Solutions -->
+            <div class="row align-items-center mb-5" data-aos="fade-up">
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80" 
+                         alt="Cloud Solutions" 
+                         class="img-fluid rounded-3 shadow-lg">
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <div class="icon-box mb-4" style="width: 60px; height: 60px; border-radius: 12px; background: rgba(20, 108, 148, 0.1); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-cloud" style="color: var(--accent-color); font-size: 28px;"></i>
+                    </div>
+                    <h2 class="section-title">Cloud Solutions</h2>
+                    <p class="lead text-muted mb-4">Scalable and secure cloud infrastructure</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fas fa-check-circle me-2" style="color: var(--accent-color)"></i>
+                            Cloud Migration
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fas fa-check-circle me-2" style="color: var(--accent-color)"></i>
+                            AWS & Azure Services
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fas fa-check-circle me-2" style="color: var(--accent-color)"></i>
+                            Cloud Security
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge rounded-pill px-3 py-2 mb-2" style="background: var(--accent-color);">
+                    <i class="fas fa-code me-1"></i>Technologies
+                </span>
+                <h2 class="section-title">Technologies We Use</h2>
+                <p class="section-subtitle">Latest tools and frameworks for optimal solutions</p>
+            </div>
+
+            <!-- Frontend Technologies -->
+            <div class="mb-5">
+                <h4 class="text-center mb-4" data-aos="fade-up">Frontend Technologies</h4>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">React</h6>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">Vue.js</h6>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">Angular</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Backend Technologies -->
+            <div class="mb-5">
+                <h4 class="text-center mb-4" data-aos="fade-up">Backend Technologies</h4>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">Node.js</h6>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">PHP</h6>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" alt="Laravel">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">Laravel</h6>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">Python</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Technologies -->
+            <div class="mb-5">
+                <h4 class="text-center mb-4" data-aos="fade-up">Mobile Technologies</h4>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">React Native</h6>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">Flutter</h6>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="iOS (Swift)">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">iOS (Swift)</h6>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="Android">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">Android</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Database & Cloud -->
+            <div class="mb-5">
+                <h4 class="text-center mb-4" data-aos="fade-up">Database & Cloud</h4>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">MongoDB</h6>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">MySQL</h6>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">PostgreSQL</h6>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">AWS</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Development Tools -->
+            <div>
+                <h4 class="text-center mb-4" data-aos="fade-up">Development Tools</h4>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">Git</h6>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">Docker</h6>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">Kubernetes</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add this section after the hero and before the technologies section -->
+    <section class="service-highlights py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="highlight-card text-center p-4 bg-white rounded-3 shadow-sm h-100"
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="icon-wrapper mb-4">
+                            <i class="fas fa-award fa-3x" style="color: var(--accent-color);"></i>
+                        </div>
+                        <h3 class="counter mb-2">50+</h3>
+                        <p class="mb-0 text-muted">Projects Completed</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="highlight-card text-center p-4 bg-white rounded-3 shadow-sm h-100"
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="icon-wrapper mb-4">
+                            <i class="fas fa-users fa-3x" style="color: var(--accent-color);"></i>
+                        </div>
+                        <h3 class="counter mb-2">200+</h3>
+                        <p class="mb-0 text-muted">Happy Clients</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="highlight-card text-center p-4 bg-white rounded-3 shadow-sm h-100"
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="icon-wrapper mb-4">
+                            <i class="fas fa-code-branch fa-3x" style="color: var(--accent-color);"></i>
+                        </div>
+                        <h3 class="counter mb-2">50+</h3>
+                        <p class="mb-0 text-muted">Expert Developers</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="highlight-card text-center p-4 bg-white rounded-3 shadow-sm h-100"
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="icon-wrapper mb-4">
+                            <i class="fas fa-globe fa-3x" style="color: var(--accent-color);"></i>
+                        </div>
+                        <h3 class="counter mb-2">20+</h3>
+                        <p class="mb-0 text-muted">Countries Served</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add this section after the technologies section -->
+    <section class="service-features py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" 
+                         alt="Team Collaboration" 
+                         class="img-fluid rounded-3 shadow-lg">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <span class="badge rounded-pill px-3 py-2 mb-2" style="background: var(--accent-color);">
+                        <i class="fas fa-star me-1"></i>Why Choose Us
+                    </span>
+                    <h2 class="mb-4">Expert Solutions for Your Business</h2>
+                    <div class="feature-list">
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="feature-icon me-3">
+                                <i class="fas fa-check-circle fa-2x" style="color: var(--accent-color);"></i>
+                            </div>
+                            <div>
+                                <h5>Experienced Team</h5>
+                                <p class="text-muted mb-0">Our team of experts brings years of industry experience to every project.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="feature-icon me-3">
+                                <i class="fas fa-clock fa-2x" style="color: var(--accent-color);"></i>
+                            </div>
+                            <div>
+                                <h5>Timely Delivery</h5>
+                                <p class="text-muted mb-0">We ensure your projects are delivered on time and within budget.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start">
+                            <div class="feature-icon me-3">
+                                <i class="fas fa-headset fa-2x" style="color: var(--accent-color);"></i>
+                            </div>
+                            <div>
+                                <h5>24/7 Support</h5>
+                                <p class="text-muted mb-0">Round-the-clock support to address your concerns and queries.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add this modal code before the closing body tag -->
+    <div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold" id="quoteModalLabel">Request a Free Quote</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted mb-4">Please fill out the form below and we'll get back to you with a custom quote.</p>
+                    <form id="quoteForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" placeholder="John Doe" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Company Name</label>
+                                    <input type="text" class="form-control" placeholder="Your Company">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" placeholder="john@example.com" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" placeholder="+1 (555) 000-0000">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label">Service Interested In</label>
+                                    <select class="form-select" required>
+                                        <option value="" selected disabled>Select a service</option>
+                                        <option value="web">Web Development</option>
+                                        <option value="mobile">Mobile Development</option>
+                                        <option value="cloud">Cloud Solutions</option>
+                                        <option value="consulting">IT Consulting</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label">Project Details</label>
+                                    <textarea class="form-control" rows="3" placeholder="Tell us about your project requirements..." required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" form="quoteForm" class="btn btn-custom">Submit Request</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Same Footer as other pages -->
+    <footer class="footer" style="background: var(--primary-color); color: white; padding: 4rem 0 0 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4 class="mb-4">TechSolutions</h4>
+                    <p>Empowering businesses through innovative technology solutions and digital transformation.</p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 mb-4">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html">Home</a></li>
+                        <li class="mb-2"><a href="about.html">About</a></li>
+                        <li class="mb-2"><a href="services.html">Services</a></li>
+                        <li class="mb-2"><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-4">Our Services</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">Web Development</li>
+                        <li class="mb-2">Mobile Development</li>
+                        <li class="mb-2">Cloud Solutions</li>
+                        <li class="mb-2">IT Consulting</li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p>Subscribe to our newsletter for updates and insights.</p>
+                    <form class="mt-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                            <button class="btn btn-custom" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="text-center py-3 mt-4" style="background: rgba(0,0,0,0.2);">
+            <p class="mb-0">© 2024 TechSolutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+    <script>
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(counter => {
+            const target = +counter.innerText.replace('+', '');
+            const increment = target / 100;
+            let count = 0;
+            
+            const updateCounter = () => {
+                if(count < target) {
+                    count += increment;
+                    counter.innerText = Math.ceil(count) + '+';
+                    setTimeout(updateCounter, 10);
+                } else {
+                    counter.innerText = target + '+';
+                }
+            };
+            
+            updateCounter();
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - TechSolutions</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Same styles as other pages -->
+    <style>
+        :root {
+            --primary-color: #0B2447;
+            --secondary-color: #19376D;
+            --accent-color: #146C94;
+            --light-bg: #F8F9FA;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--primary-color) !important;
+            margin: 0 1rem;
+        }
+
+        .btn-custom {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        /* Keep your existing service-specific styles below */
+
+        .service-hero-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+        }
+
+        .service-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-image-wrapper img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .tech-icon {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .tech-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .tech-icon img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <!-- Same Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">TechSolutions</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="Home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="FAQ.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+                </ul>
+                <button class="btn btn-custom me-3" data-bs-toggle="modal" data-bs-target="#quoteModal">Get Free Quote</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Services Hero Section -->
+    <section class="services-hero" style="background: linear-gradient(rgba(11, 36, 71, 0.9), rgba(11, 36, 71, 0.9)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80'); background-size: cover; background-position: center; padding: 8rem 0 4rem; color: white;">
+        <div class="container">
+            <div class="row justify-content-center text-center" data-aos="fade-up">
+                <div class="col-lg-8">
+                    <span class="service-hero-badge">
+                        <i class="fas fa-rocket me-2"></i>Our Services
+                    </span>
+                    <h1 class="mb-4">Comprehensive IT Solutions</h1>
+                    <p class="lead mb-4">Empowering businesses with cutting-edge technology solutions</p>
+                    <a href="#contact" class="btn btn-custom me-3">
+                        <i class="fas fa-paper-plane me-2"></i>Get Started
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add after the Hero Section -->
+    <section class="features-section py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Feature Cards -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card p-4 bg-white rounded-3 shadow-sm h-100" 
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="icon-box mb-4" style="width: 60px; height: 60px; border-radius: 12px; background: rgba(20, 108, 148, 0.1); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-shield-alt" style="color: var(--accent-color); font-size: 24px;"></i>
+                        </div>
+                        <h4>Secure Solutions</h4>
+                        <p class="text-muted mb-0">Enterprise-grade security measures to protect your business data and applications.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card p-4 bg-white rounded-3 shadow-sm h-100"
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="icon-box mb-4" style="width: 60px; height: 60px; border-radius: 12px; background: rgba(20, 108, 148, 0.1); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-clock" style="color: var(--accent-color); font-size: 24px;"></i>
+                        </div>
+                        <h4>24/7 Support</h4>
+                        <p class="text-muted mb-0">Round-the-clock technical support and monitoring for your peace of mind.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card p-4 bg-white rounded-3 shadow-sm h-100"
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="icon-box mb-4" style="width: 60px; height: 60px; border-radius: 12px; background: rgba(20, 108, 148, 0.1); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-rocket" style="color: var(--accent-color); font-size: 24px;"></i>
+                        </div>
+                        <h4>Scalable Growth</h4>
+                        <p class="text-muted mb-0">Solutions that grow with your business, ensuring long-term success.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Service Process Section -->
+    <section class="process-section py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="badge rounded-pill px-3 py-2 mb-2" style="background: var(--accent-color);">
+                    <i class="fas fa-cogs me-1"></i>Our Process
+                </span>
+                <h2 class="section-title">How We Work</h2>
+                <p class="section-subtitle">Our proven methodology for delivering excellence</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="process-card text-center p-4">
+                        <div class="process-icon mb-4 mx-auto" style="width: 80px; height: 80px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                            <i class="fas fa-lightbulb fa-2x" style="color: var(--accent-color);"></i>
+                        </div>
+                        <h4 class="mb-3">1. Discovery</h4>
+                        <p class="text-muted">Understanding your needs and objectives through detailed consultation.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="process-card text-center p-4">
+                        <div class="process-icon mb-4 mx-auto" style="width: 80px; height: 80px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                            <i class="fas fa-pencil-ruler fa-2x" style="color: var(--accent-color);"></i>
+                        </div>
+                        <h4 class="mb-3">2. Planning</h4>
+                        <p class="text-muted">Developing a comprehensive strategy and project roadmap.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="process-card text-center p-4">
+                        <div class="process-icon mb-4 mx-auto" style="width: 80px; height: 80px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                            <i class="fas fa-code fa-2x" style="color: var(--accent-color);"></i>
+                        </div>
+                        <h4 class="mb-3">3. Development</h4>
+                        <p class="text-muted">Implementing solutions using cutting-edge technologies.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="process-card text-center p-4">
+                        <div class="process-icon mb-4 mx-auto" style="width: 80px; height: 80px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                            <i class="fas fa-rocket fa-2x" style="color: var(--accent-color);"></i>
+                        </div>
+                        <h4 class="mb-3">4. Launch</h4>
+                        <p class="text-muted">Deploying and maintaining your solution for optimal performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Service Comparison Table -->
+    <section class="pricing-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="badge rounded-pill px-3 py-2 mb-2" style="background: var(--accent-color);">
+                    <i class="fas fa-tags me-1"></i>Service Plans
+                </span>
+                <h2 class="section-title">Choose Your Plan</h2>
+                <p class="section-subtitle">Flexible solutions for businesses of all sizes</p>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="bg-light">
+                            <th scope="col" style="width: 25%;">Features</th>
+                            <th scope="col" style="width: 25%;" class="text-center">Basic</th>
+                            <th scope="col" style="width: 25%;" class="text-center">Professional</th>
+                            <th scope="col" style="width: 25%;" class="text-center">Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Consultation</td>
+                            <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                            <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                            <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Development Hours</td>
+                            <td class="text-center">20 hours</td>
+                            <td class="text-center">50 hours</td>
+                            <td class="text-center">Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td>Support</td>
+                            <td class="text-center">Email</td>
+                            <td class="text-center">Email & Phone</td>
+                            <td class="text-center">24/7 Priority</td>
+                        </tr>
+                        <tr>
+                            <td>Updates</td>
+                            <td class="text-center">Quarterly</td>
+                            <td class="text-center">Monthly</td>
+                            <td class="text-center">Weekly</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Solutions Section -->
+    <section class="industries-section py-5" style="background: var(--light-bg);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="badge rounded-pill px-3 py-2 mb-2" style="background: var(--accent-color);">
+                    <i class="fas fa-industry me-1"></i>Industries
+                </span>
+                <h2 class="section-title">Industries We Serve</h2>
+                <p class="section-subtitle">Tailored solutions for various sectors</p>
+            </div>
+            <div class="row g-4">
+                <!-- Healthcare Card -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <div class="industry-card p-4 bg-white rounded-3 shadow-sm"
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="icon-box mb-4" style="width: 60px; height: 60px; border-radius: 12px; background: rgba(20, 108, 148, 0.1); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-hospital" style="color: var(--accent-color); font-size: 24px;"></i>
+                        </div>
+                        <h4>Healthcare</h4>
+                        <p class="text-muted">Secure and compliant solutions for healthcare providers.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>HIPAA Compliant</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>Patient Portals</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>EMR Integration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- E-Commerce Card -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="industry-card p-4 bg-white rounded-3 shadow-sm"
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="icon-box mb-4" style="width: 60px; height: 60px; border-radius: 12px; background: rgba(20, 108, 148, 0.1); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-shopping-cart" style="color: var(--accent-color); font-size: 24px;"></i>
+                        </div>
+                        <h4>E-Commerce</h4>
+                        <p class="text-muted">Scalable online retail solutions for modern businesses.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>Payment Integration</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>Inventory Management</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Analytics Dashboard</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Finance Card -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="industry-card p-4 bg-white rounded-3 shadow-sm"
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="icon-box mb-4" style="width: 60px; height: 60px; border-radius: 12px; background: rgba(20, 108, 148, 0.1); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-chart-line" style="color: var(--accent-color); font-size: 24px;"></i>
+                        </div>
+                        <h4>Finance</h4>
+                        <p class="text-muted">Secure financial technology solutions for banking and fintech.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>Secure Transactions</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>Real-time Analytics</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Regulatory Compliance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Education Card -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="industry-card p-4 bg-white rounded-3 shadow-sm"
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="icon-box mb-4" style="width: 60px; height: 60px; border-radius: 12px; background: rgba(20, 108, 148, 0.1); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-graduation-cap" style="color: var(--accent-color); font-size: 24px;"></i>
+                        </div>
+                        <h4>Education</h4>
+                        <p class="text-muted">Innovative solutions for educational institutions.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>Learning Management Systems</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>Student Portals</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Online Courses</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Real Estate Card -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="industry-card p-4 bg-white rounded-3 shadow-sm"
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="icon-box mb-4" style="width: 60px; height: 60px; border-radius: 12px; background: rgba(20, 108, 148, 0.1); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-home" style="color: var(--accent-color); font-size: 24px;"></i>
+                        </div>
+                        <h4>Real Estate</h4>
+                        <p class="text-muted">Comprehensive solutions for real estate management.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>Property Management</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>Real Estate Portals</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Market Analysis Tools</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Hospitality Card -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700">
+                    <div class="industry-card p-4 bg-white rounded-3 shadow-sm"
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="icon-box mb-4" style="width: 60px; height: 60px; border-radius: 12px; background: rgba(20, 108, 148, 0.1); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-concierge-bell" style="color: var(--accent-color); font-size: 24px;"></i>
+                        </div>
+                        <h4>Hospitality</h4>
+                        <p class="text-muted">Tailored solutions for the hospitality industry.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>Booking Systems</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>Guest Management</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Feedback Systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Services Section -->
+    <section class="py-5">
+        <div class="container">
+            <!-- Web Development -->
+            <div class="row align-items-center mb-5" data-aos="fade-up">
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80" 
+                         alt="Web Development" 
+                         class="img-fluid rounded-3 shadow-lg">
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <div class="icon-box mb-4" style="width: 60px; height: 60px; border-radius: 12px; background: rgba(20, 108, 148, 0.1); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-code" style="color: var(--accent-color); font-size: 28px;"></i>
+                    </div>
+                    <h2 class="section-title">Web Development</h2>
+                    <p class="lead text-muted mb-4">Custom websites and web applications that drive results</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fas fa-check-circle me-2" style="color: var(--accent-color)"></i>
+                            Responsive Design
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fas fa-check-circle me-2" style="color: var(--accent-color)"></i>
+                            E-commerce Solutions
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fas fa-check-circle me-2" style="color: var(--accent-color)"></i>
+                            CMS Development
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+
+            <!-- Mobile Development -->
+            <div class="row align-items-center mb-5 flex-lg-row-reverse" data-aos="fade-up">
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80" 
+                         alt="Mobile Development" 
+                         class="img-fluid rounded-3 shadow-lg">
+                </div>
+                <div class="col-lg-6 pe-lg-5">
+                    <div class="icon-box mb-4" style="width: 60px; height: 60px; border-radius: 12px; background: rgba(20, 108, 148, 0.1); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-mobile-alt" style="color: var(--accent-color); font-size: 28px;"></i>
+                    </div>
+                    <h2 class="section-title">Mobile Development</h2>
+                    <p class="lead text-muted mb-4">Native and cross-platform mobile applications</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fas fa-check-circle me-2" style="color: var(--accent-color)"></i>
+                            iOS Development
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fas fa-check-circle me-2" style="color: var(--accent-color)"></i>
+                            Android Development
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fas fa-check-circle me-2" style="color: var(--accent-color)"></i>
+                            Cross-platform Solutions
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+
+            <!-- Cloud Solutions -->
+            <div class="row align-items-center mb-5" data-aos="fade-up">
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80" 
+                         alt="Cloud Solutions" 
+                         class="img-fluid rounded-3 shadow-lg">
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <div class="icon-box mb-4" style="width: 60px; height: 60px; border-radius: 12px; background: rgba(20, 108, 148, 0.1); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-cloud" style="color: var(--accent-color); font-size: 28px;"></i>
+                    </div>
+                    <h2 class="section-title">Cloud Solutions</h2>
+                    <p class="lead text-muted mb-4">Scalable and secure cloud infrastructure</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fas fa-check-circle me-2" style="color: var(--accent-color)"></i>
+                            Cloud Migration
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fas fa-check-circle me-2" style="color: var(--accent-color)"></i>
+                            AWS & Azure Services
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fas fa-check-circle me-2" style="color: var(--accent-color)"></i>
+                            Cloud Security
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge rounded-pill px-3 py-2 mb-2" style="background: var(--accent-color);">
+                    <i class="fas fa-code me-1"></i>Technologies
+                </span>
+                <h2 class="section-title">Technologies We Use</h2>
+                <p class="section-subtitle">Latest tools and frameworks for optimal solutions</p>
+            </div>
+
+            <!-- Frontend Technologies -->
+            <div class="mb-5">
+                <h4 class="text-center mb-4" data-aos="fade-up">Frontend Technologies</h4>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">React</h6>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">Vue.js</h6>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">Angular</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Backend Technologies -->
+            <div class="mb-5">
+                <h4 class="text-center mb-4" data-aos="fade-up">Backend Technologies</h4>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">Node.js</h6>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">PHP</h6>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" alt="Laravel">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">Laravel</h6>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">Python</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Technologies -->
+            <div class="mb-5">
+                <h4 class="text-center mb-4" data-aos="fade-up">Mobile Technologies</h4>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">React Native</h6>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">Flutter</h6>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="iOS (Swift)">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">iOS (Swift)</h6>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="Android">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">Android</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Database & Cloud -->
+            <div class="mb-5">
+                <h4 class="text-center mb-4" data-aos="fade-up">Database & Cloud</h4>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">MongoDB</h6>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">MySQL</h6>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">PostgreSQL</h6>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">AWS</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Development Tools -->
+            <div>
+                <h4 class="text-center mb-4" data-aos="fade-up">Development Tools</h4>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">Git</h6>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">Docker</h6>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="tech-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">
+                        </div>
+                        <h6 class="text-center mt-3 mb-0">Kubernetes</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add this section after the hero and before the technologies section -->
+    <section class="service-highlights py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="highlight-card text-center p-4 bg-white rounded-3 shadow-sm h-100"
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="icon-wrapper mb-4">
+                            <i class="fas fa-award fa-3x" style="color: var(--accent-color);"></i>
+                        </div>
+                        <h3 class="counter mb-2">50+</h3>
+                        <p class="mb-0 text-muted">Projects Completed</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="highlight-card text-center p-4 bg-white rounded-3 shadow-sm h-100"
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="icon-wrapper mb-4">
+                            <i class="fas fa-users fa-3x" style="color: var(--accent-color);"></i>
+                        </div>
+                        <h3 class="counter mb-2">200+</h3>
+                        <p class="mb-0 text-muted">Happy Clients</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="highlight-card text-center p-4 bg-white rounded-3 shadow-sm h-100"
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="icon-wrapper mb-4">
+                            <i class="fas fa-code-branch fa-3x" style="color: var(--accent-color);"></i>
+                        </div>
+                        <h3 class="counter mb-2">50+</h3>
+                        <p class="mb-0 text-muted">Expert Developers</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="highlight-card text-center p-4 bg-white rounded-3 shadow-sm h-100"
+                         style="transition: all 0.3s ease;"
+                         onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)'"
+                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.05)'">
+                        <div class="icon-wrapper mb-4">
+                            <i class="fas fa-globe fa-3x" style="color: var(--accent-color);"></i>
+                        </div>
+                        <h3 class="counter mb-2">20+</h3>
+                        <p class="mb-0 text-muted">Countries Served</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add this section after the technologies section -->
+    <section class="service-features py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" 
+                         alt="Team Collaboration" 
+                         class="img-fluid rounded-3 shadow-lg">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <span class="badge rounded-pill px-3 py-2 mb-2" style="background: var(--accent-color);">
+                        <i class="fas fa-star me-1"></i>Why Choose Us
+                    </span>
+                    <h2 class="mb-4">Expert Solutions for Your Business</h2>
+                    <div class="feature-list">
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="feature-icon me-3">
+                                <i class="fas fa-check-circle fa-2x" style="color: var(--accent-color);"></i>
+                            </div>
+                            <div>
+                                <h5>Experienced Team</h5>
+                                <p class="text-muted mb-0">Our team of experts brings years of industry experience to every project.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="feature-icon me-3">
+                                <i class="fas fa-clock fa-2x" style="color: var(--accent-color);"></i>
+                            </div>
+                            <div>
+                                <h5>Timely Delivery</h5>
+                                <p class="text-muted mb-0">We ensure your projects are delivered on time and within budget.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start">
+                            <div class="feature-icon me-3">
+                                <i class="fas fa-headset fa-2x" style="color: var(--accent-color);"></i>
+                            </div>
+                            <div>
+                                <h5>24/7 Support</h5>
+                                <p class="text-muted mb-0">Round-the-clock support to address your concerns and queries.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add this modal code before the closing body tag -->
+    <div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold" id="quoteModalLabel">Request a Free Quote</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted mb-4">Please fill out the form below and we'll get back to you with a custom quote.</p>
+                    <form id="quoteForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" placeholder="John Doe" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Company Name</label>
+                                    <input type="text" class="form-control" placeholder="Your Company">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" placeholder="john@example.com" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" placeholder="+1 (555) 000-0000">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label">Service Interested In</label>
+                                    <select class="form-select" required>
+                                        <option value="" selected disabled>Select a service</option>
+                                        <option value="web">Web Development</option>
+                                        <option value="mobile">Mobile Development</option>
+                                        <option value="cloud">Cloud Solutions</option>
+                                        <option value="consulting">IT Consulting</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label">Project Details</label>
+                                    <textarea class="form-control" rows="3" placeholder="Tell us about your project requirements..." required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" form="quoteForm" class="btn btn-custom">Submit Request</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Same Footer as other pages -->
+    <footer class="footer" style="background: var(--primary-color); color: white; padding: 4rem 0 0 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4 class="mb-4">TechSolutions</h4>
+                    <p>Empowering businesses through innovative technology solutions and digital transformation.</p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 mb-4">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html">Home</a></li>
+                        <li class="mb-2"><a href="about.html">About</a></li>
+                        <li class="mb-2"><a href="services.html">Services</a></li>
+                        <li class="mb-2"><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-4">Our Services</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">Web Development</li>
+                        <li class="mb-2">Mobile Development</li>
+                        <li class="mb-2">Cloud Solutions</li>
+                        <li class="mb-2">IT Consulting</li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p>Subscribe to our newsletter for updates and insights.</p>
+                    <form class="mt-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                            <button class="btn btn-custom" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="text-center py-3 mt-4" style="background: rgba(0,0,0,0.2);">
+            <p class="mb-0">© 2024 TechSolutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+    <script>
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(counter => {
+            const target = +counter.innerText.replace('+', '');
+            const increment = target / 100;
+            let count = 0;
+            
+            const updateCounter = () => {
+                if(count < target) {
+                    count += increment;
+                    counter.innerText = Math.ceil(count) + '+';
+                    setTimeout(updateCounter, 10);
+                } else {
+                    counter.innerText = target + '+';
+                }
+            };
+            
+            updateCounter();
+        });
+    </script>
+</body>
+</html>

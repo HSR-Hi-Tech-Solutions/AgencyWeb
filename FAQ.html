@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - TechSolutions</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Same styles as home page -->
+    <style>
+        :root {
+            --primary-color: #0B2447;
+            --secondary-color: #19376D;
+            --accent-color: #146C94;
+            --light-bg: #F8F9FA;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--primary-color) !important;
+            margin: 0 1rem;
+        }
+
+        .btn-custom {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* FAQ Specific Styles */
+        .faq-hero {
+            background: linear-gradient(rgba(11, 36, 71, 0.9), rgba(11, 36, 71, 0.9)),
+                        url('https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?auto=format&fit=crop&q=80') center/cover;
+            padding: 120px 0;
+            color: white;
+            margin-top: 76px;
+        }
+
+        .faq-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0,0,0,0.08);
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+        }
+
+        .faq-card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .faq-category {
+            background: var(--light-bg);
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .category-card {
+            padding: 2.5rem;
+            border-radius: 20px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-color) 100%);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+
+        .category-card:hover::before {
+            opacity: 0.05;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .category-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .category-card:hover i {
+            transform: scale(1.1);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        /* Search Bar Styles */
+        .search-container {
+            position: relative;
+            max-width: 600px;
+            margin: -30px auto 0;
+            z-index: 10;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            outline: none;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent-color);
+        }
+
+        /* Modern FAQ Card Styles */
+        .faq-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0,0,0,0.08);
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+        }
+
+        .faq-card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .faq-question {
+            position: relative;
+            padding: 1.5rem;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: rgba(20, 108, 148, 0.02);
+        }
+
+        .faq-card.active .faq-answer {
+            padding: 1.5rem;
+            max-height: 500px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            transition: all 0.3s ease;
+        }
+
+        .faq-card.active .faq-question::after {
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        .search-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .category-card {
+            border: none;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(20, 108, 148, 0.1);
+        }
+
+        .faq-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Same Navbar as Home -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">TechSolutions</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="Home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="FAQ.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+                </ul>
+                <button class="btn btn-custom me-3" data-bs-toggle="modal" data-bs-target="#quoteModal">Get Free Quote</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- FAQ Hero Section -->
+    <section class="faq-hero">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <span class="badge rounded-pill px-3 py-2 mb-3" style="background: rgba(255, 255, 255, 0.1);">
+                        <i class="fas fa-question-circle me-2"></i>FAQ
+                    </span>
+                    <h1 class="display-4 mb-4">Frequently Asked Questions</h1>
+                    <p class="lead">Find detailed answers to common questions about our services and solutions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Categories Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="category-card p-4 bg-white text-center">
+                        <div class="mb-4">
+                            <i class="fas fa-laptop-code fa-3x" style="color: var(--accent-color)"></i>
+                        </div>
+                        <h5>Technical Support</h5>
+                        <p class="text-muted mb-0">Development & Integration</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="category-card p-4 bg-white text-center">
+                        <div class="mb-4">
+                            <i class="fas fa-mobile-alt fa-3x" style="color: var(--accent-color)"></i>
+                        </div>
+                        <h5>Mobile Solutions</h5>
+                        <p class="text-muted mb-0">Apps & Responsive Design</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="category-card p-4 bg-white text-center">
+                        <div class="mb-4">
+                            <i class="fas fa-cloud fa-3x" style="color: var(--accent-color)"></i>
+                        </div>
+                        <h5>Cloud Services</h5>
+                        <p class="text-muted mb-0">Hosting & Infrastructure</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="category-card p-4 bg-white text-center">
+                        <div class="mb-4">
+                            <i class="fas fa-shield-alt fa-3x" style="color: var(--accent-color)"></i>
+                        </div>
+                        <h5>Security</h5>
+                        <p class="text-muted mb-0">Protection & Compliance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Content Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="accordion" id="mainFaq">
+                        <!-- Question 1 -->
+                        <div class="accordion-item faq-card mb-3" data-aos="fade-up">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    <i class="fas fa-code me-2"></i>
+                                    What technologies and programming languages do you specialize in?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#mainFaq">
+                                <div class="accordion-body">
+                                    We specialize in a wide range of technologies including:
+                                    <ul class="mt-2">
+                                        <li>Frontend: React.js, Vue.js, Angular</li>
+                                        <li>Backend: Node.js, PHP/Laravel, Python/Django</li>
+                                        <li>Mobile: React Native, Flutter, Native iOS/Android</li>
+                                        <li>Database: MongoDB, MySQL, PostgreSQL</li>
+                                        <li>Cloud: AWS, Google Cloud, Azure</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 2 -->
+                        <div class="accordion-item faq-card mb-3" data-aos="fade-up">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    <i class="fas fa-clock me-2"></i>
+                                    How long does it typically take to complete a project?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#mainFaq">
+                                <div class="accordion-body">
+                                    Project timelines vary based on complexity and scope:
+                                    <ul class="mt-2">
+                                        <li>Simple websites: 2-4 weeks</li>
+                                        <li>E-commerce platforms: 6-12 weeks</li>
+                                        <li>Custom web applications: 8-16 weeks</li>
+                                        <li>Mobile applications: 12-20 weeks</li>
+                                        <li>Enterprise solutions: 16-24 weeks</li>
+                                    </ul>
+                                    We'll provide a detailed timeline during the project planning phase.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 3 -->
+                        <div class="accordion-item faq-card mb-3" data-aos="fade-up">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    <i class="fas fa-shield-alt me-2"></i>
+                                    How do you ensure the security of our data and applications?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#mainFaq">
+                                <div class="accordion-body">
+                                    We implement comprehensive security measures including:
+                                    <ul class="mt-2">
+                                        <li>End-to-end encryption for data transmission</li>
+                                        <li>Regular security audits and penetration testing</li>
+                                        <li>Secure authentication and authorization protocols</li>
+                                        <li>Compliance with GDPR, HIPAA, and other standards</li>
+                                        <li>Regular security updates and monitoring</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 4 -->
+                        <div class="accordion-item faq-card mb-3" data-aos="fade-up">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    <i class="fas fa-mobile-alt me-2"></i>
+                                    Do you develop both iOS and Android mobile apps?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#mainFaq">
+                                <div class="accordion-body">
+                                    Yes, we offer comprehensive mobile development services:
+                                    <ul class="mt-2">
+                                        <li>Native iOS development using Swift</li>
+                                        <li>Native Android development using Kotlin</li>
+                                        <li>Cross-platform development using React Native or Flutter</li>
+                                        <li>Progressive Web Apps (PWAs)</li>
+                                        <li>App maintenance and updates</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 5 -->
+                        <div class="accordion-item faq-card mb-3" data-aos="fade-up">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    <i class="fas fa-headset me-2"></i>
+                                    What kind of support do you provide after project completion?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#mainFaq">
+                                <div class="accordion-body">
+                                    Our post-project support includes:
+                                    <ul class="mt-2">
+                                        <li>24/7 technical support</li>
+                                        <li>Regular maintenance and updates</li>
+                                        <li>Performance monitoring</li>
+                                        <li>Security patches and updates</li>
+                                        <li>Dedicated support team</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 6 -->
+                        <div class="accordion-item faq-card mb-3" data-aos="fade-up">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                    <i class="fas fa-cloud me-2"></i>
+                                    What cloud services do you offer?
+                                </button>
+                            </h2>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#mainFaq">
+                                <div class="accordion-body">
+                                    Our cloud services include:
+                                    <ul class="mt-2">
+                                        <li>Cloud infrastructure setup and management</li>
+                                        <li>Cloud migration services</li>
+                                        <li>Serverless architecture implementation</li>
+                                        <li>Cloud security and compliance</li>
+                                        <li>24/7 cloud monitoring and support</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 7 -->
+                        <div class="accordion-item faq-card mb-3" data-aos="fade-up">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                                    <i class="fas fa-dollar-sign me-2"></i>
+                                    How do you handle project pricing and payments?
+                                </button>
+                            </h2>
+                            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#mainFaq">
+                                <div class="accordion-body">
+                                    Our pricing structure is transparent and flexible:
+                                    <ul class="mt-2">
+                                        <li>Fixed-price projects</li>
+                                        <li>Time and material basis</li>
+                                        <li>Monthly retainer options</li>
+                                        <li>Milestone-based payments</li>
+                                        <li>Customized payment plans</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 8 -->
+                        <div class="accordion-item faq-card mb-3" data-aos="fade-up">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
+                                    <i class="fas fa-users me-2"></i>
+                                    What is your team composition?
+                                </button>
+                            </h2>
+                            <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#mainFaq">
+                                <div class="accordion-body">
+                                    Our teams typically include:
+                                    <ul class="mt-2">
+                                        <li>Project Manager</li>
+                                        <li>UI/UX Designers</li>
+                                        <li>Frontend and Backend Developers</li>
+                                        <li>QA Engineers</li>
+                                        <li>DevOps Engineers</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 9 -->
+                        <div class="accordion-item faq-card mb-3" data-aos="fade-up">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9">
+                                    <i class="fas fa-tasks me-2"></i>
+                                    What is your development process?
+                                </button>
+                            </h2>
+                            <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#mainFaq">
+                                <div class="accordion-body">
+                                    Our development process includes:
+                                    <ul class="mt-2">
+                                        <li>Requirements gathering and analysis</li>
+                                        <li>Design and prototyping</li>
+                                        <li>Agile development methodology</li>
+                                        <li>Regular testing and QA</li>
+                                        <li>Continuous deployment and integration</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 10 -->
+                        <div class="accordion-item faq-card mb-3" data-aos="fade-up">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10">
+                                    <i class="fas fa-chart-line me-2"></i>
+                                    How do you ensure project success and quality?
+                                </button>
+                            </h2>
+                            <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#mainFaq">
+                                <div class="accordion-body">
+                                    We ensure quality through:
+                                    <ul class="mt-2">
+                                        <li>Regular client communications and updates</li>
+                                        <li>Comprehensive testing protocols</li>
+                                        <li>Code reviews and best practices</li>
+                                        <li>Performance optimization</li>
+                                        <li>Post-launch monitoring and support</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Support Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <h2 class="mb-4">Still Have Questions?</h2>
+                    <p class="lead mb-5">Contact our support team for personalized assistance</p>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="p-4 bg-white rounded-3 shadow-sm h-100">
+                                <i class="fas fa-envelope fa-2x mb-3" style="color: var(--accent-color)"></i>
+                                <h5>Email Support</h5>
+                                <p class="mb-3">Get in touch with our support team</p>
+                                <a href="mailto:support@techsolutions.com" class="btn btn-custom">
+                                    Send Email
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-4 bg-white rounded-3 shadow-sm h-100">
+                                <i class="fas fa-phone-alt fa-2x mb-3" style="color: var(--accent-color)"></i>
+                                <h5>Phone Support</h5>
+                                <p class="mb-3">Speak with a support representative</p>
+                                <a href="tel:+1234567890" class="btn btn-custom">
+                                    Call Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add this modal code before the closing body tag -->
+    <div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold" id="quoteModalLabel">Request a Free Quote</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted mb-4">Please fill out the form below and we'll get back to you with a custom quote.</p>
+                    <form id="quoteForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" placeholder="John Doe" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Company Name</label>
+                                    <input type="text" class="form-control" placeholder="Your Company">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" placeholder="john@example.com" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" placeholder="+1 (555) 000-0000">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label">Service Interested In</label>
+                                    <select class="form-select" required>
+                                        <option value="" selected disabled>Select a service</option>
+                                        <option value="web">Web Development</option>
+                                        <option value="mobile">Mobile Development</option>
+                                        <option value="cloud">Cloud Solutions</option>
+                                        <option value="consulting">IT Consulting</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label">Project Details</label>
+                                    <textarea class="form-control" rows="3" placeholder="Tell us about your project requirements..." required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" form="quoteForm" class="btn btn-custom">Submit Request</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Same Footer as Home -->
+    <footer class="footer" style="background: var(--primary-color); color: white; padding: 4rem 0 0 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4 class="mb-4">TechSolutions</h4>
+                    <p>Empowering businesses through innovative technology solutions and digital transformation.</p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 mb-4">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html">Home</a></li>
+                        <li class="mb-2"><a href="about.html">About</a></li>
+                        <li class="mb-2"><a href="services.html">Services</a></li>
+                        <li class="mb-2"><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-4">Our Services</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">Web Development</li>
+                        <li class="mb-2">Mobile Development</li>
+                        <li class="mb-2">Cloud Solutions</li>
+                        <li class="mb-2">IT Consulting</li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p>Subscribe to our newsletter for updates and insights.</p>
+                    <form class="mt-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                            <button class="btn btn-custom" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="text-center py-3 mt-4" style="background: rgba(0,0,0,0.2);">
+            <p class="mb-0">© 2024 TechSolutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+
+    
+
+    <!-- Add this script at the end of the body -->
+    <script>
+        // FAQ Accordion functionality
+        document.querySelectorAll('.faq-card').forEach(card => {
+            card.addEventListener('click', () => {
+                // Close other cards
+                document.querySelectorAll('.faq-card').forEach(otherCard => {
+                    if (otherCard !== card) {
+                        otherCard.classList.remove('active');
+                    }
+                });
+                // Toggle current card
+                card.classList.toggle('active');
+            });
+        });
+
+        // Search functionality
+        const searchBox = document.querySelector('.search-box');
+        const faqCards = document.querySelectorAll('.faq-card');
+
+        searchBox.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            
+            faqCards.forEach(card => {
+                const question = card.querySelector('h5').textContent.toLowerCase();
+                const answer = card.querySelector('p').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    card.style.opacity = '1';
+                } else {
+                    card.style.opacity = '0';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+
+        // Enhanced scroll animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50
+        });
+    </script>
+</body>
+</html>
